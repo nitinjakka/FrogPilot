@@ -92,6 +92,7 @@ class LatControlTorque(LatControl):
                                         feedforward=ff,
                                         speed=CS.vEgo,
                                         freeze_integrator=freeze_integrator)
+      output_lataccel *= 1.15
       output_torque = self.torque_from_lateral_accel(output_lataccel, self.torque_params)
 
       pid_log.active = True
